@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';  // Importa o componente raiz da
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';  // Importa o módulo necessário para funcionalidades de animação no navegador.
 import { FormsModule } from '@angular/forms';  // Importa o módulo que permite o uso de funcionalidades relacionadas a formulários.
 import { HttpClientModule } from '@angular/common/http';  // Importa o módulo para realizar operações HTTP, essencial para comunicação com APIs externas.
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';  // Importa o módulo FontAwesome para utilizar ícones vetoriais e ícones de fonte em seus componentes Angular.
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WeatherHomeComponent } from './modules/weather/page/weather-home/weather-home.component';  // Importa o módulo FontAwesome para utilizar ícones vetoriais e ícones de fonte em seus componentes Angular.
 
 
 @NgModule({  // Decorador que define uma classe como um módulo Angular.
   declarations: [  // Declara componentes, diretivas, etc., que pertencem a este módulo.
-    AppComponent
+    AppComponent, WeatherHomeComponent
   ],
   imports: [  // Importa outros módulos cujas exportações são necessárias para os componentes deste módulo.
     BrowserModule,
