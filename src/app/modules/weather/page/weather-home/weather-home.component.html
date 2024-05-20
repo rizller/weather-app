@@ -1,1 +1,21 @@
-<p>weather-home works!</p>
+<div class="search">
+  <form #form="ngForm" (submit)="onSubmit">
+    <input type="text"
+    placeholder="Buscar Localização"
+    name="city"
+    [(ngModel)]="initialCityName"
+
+    />
+    <!--o ngModel vai escutar as alterações dessa propriedade (initialCityName) e vai setar na propriedade o que for alterado (o que pesquisarmos no input)-->
+
+    <span (click)="onSubmit()">
+      <fa-icon
+      animation="fade"
+      style="--fa-animation-durantion: 5s; cursor: pointer"
+      size="lg"
+      class="search-icon"
+      [icon]="searchIcon"
+      />
+    </span>
+  </form>
+</div>
