@@ -16,9 +16,9 @@ export interface WeatherDatas{
   base: string;
   main: {
     temp: number;
-    feelsLike: number;
-    tempMin: number;
-    tempMax: number;
+    feels_like: number;
+    temp_min: number;
+    temp_max: number;
     pressure: number;
     humidity: number;
   },
