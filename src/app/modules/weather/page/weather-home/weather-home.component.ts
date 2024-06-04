@@ -15,7 +15,7 @@ export class WeatherHomeComponent implements OnInit, OnDestroy { // Declaração
   weatherDatas!: WeatherDatas;
   searchIcon = faMagnifyingGlass; //icone que será utilizado no layout.
   constructor(private weatherService: WeatherService) {} // Injeta o serviço WeatherService no construtor do componente.
-  ngOnInit(): void { // Método do ciclo de vida do Angular, chamado uma vez que o componente é inicializado.
+  ngOnInit(): void { // Método do ciclo de vida do Angular, chamado uma vez que o componente é inicializado. Oninit executa quando acaba de ser renderizado o componente
     this.getWeatherDatas(this.initialCityName); // Chama o método para obter dados meteorológicos da cidade inicial.
   }
 
@@ -38,7 +38,13 @@ export class WeatherHomeComponent implements OnInit, OnDestroy { // Declaração
     this.initialCityName = '';
   }
 
-  //quando o componennte for desmontado, ou seja, sairmos da tela, esse componennte será desmontado e entrará dentro desse bloco ngOnDestroy.
+  /**
+   *
+    quando o componennte for desmontado,
+    ou seja, sairmos da tela, esse componennte será desmontado e entrará dentro desse bloco ngOnDestroy.
+    Boa prática sempre se desinscrever dos observable.
+   */
+
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
